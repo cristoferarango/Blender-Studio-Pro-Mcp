@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+Thumbs.db
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+blender_studio_pro_mcp.log
+bmpro_debug.log
+.graphify_python
+graphify-out/
+
+.cursor/
+

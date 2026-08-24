@@ -1,0 +1,3832 @@
+[
+  {
+    "command": "set_frame",
+    "module": "animation",
+    "doc": "Set the current frame of the scene.",
+    "params": [
+      {
+        "name": "frame",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "set_frame_range",
+    "module": "animation",
+    "doc": "Set the scene frame range and optionally the FPS.",
+    "params": [
+      {
+        "name": "start",
+        "required": true
+      },
+      {
+        "name": "end",
+        "required": true
+      },
+      {
+        "name": "fps",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "insert_keyframe",
+    "module": "animation",
+    "doc": "Insert a keyframe on an object property at a given frame.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "frame",
+        "required": true
+      },
+      {
+        "name": "data_path",
+        "required": true
+      },
+      {
+        "name": "value",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "index",
+        "required": false,
+        "default": -1
+      }
+    ]
+  },
+  {
+    "command": "delete_keyframe",
+    "module": "animation",
+    "doc": "Delete a keyframe from an object property at a given frame.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "frame",
+        "required": true
+      },
+      {
+        "name": "data_path",
+        "required": true
+      },
+      {
+        "name": "index",
+        "required": false,
+        "default": -1
+      }
+    ]
+  },
+  {
+    "command": "set_keyframe_interpolation",
+    "module": "animation",
+    "doc": "Set the interpolation mode on keyframes for a given data path.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "data_path",
+        "required": true
+      },
+      {
+        "name": "mode",
+        "required": true
+      },
+      {
+        "name": "frame",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "get_keyframes",
+    "module": "animation",
+    "doc": "Get keyframe data from an object, optionally filtered by data path.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "data_path",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "clear_animation",
+    "module": "animation",
+    "doc": "Clear all animation data from an object.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "create_action",
+    "module": "animation",
+    "doc": "Create a new action.",
+    "params": [
+      {
+        "name": "name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "assign_action",
+    "module": "animation",
+    "doc": "Assign an action to an object.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "action_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "list_actions",
+    "module": "animation",
+    "doc": "List all actions with their frame ranges.",
+    "params": []
+  },
+  {
+    "command": "push_action_to_nla",
+    "module": "animation",
+    "doc": "Push an action to the NLA editor as a strip.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "action_name",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "start_frame",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "track_name",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "set_keyframe_handle_type",
+    "module": "animation",
+    "doc": "Set the handle type on a specific keyframe.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "data_path",
+        "required": true
+      },
+      {
+        "name": "frame",
+        "required": true
+      },
+      {
+        "name": "handle_type",
+        "required": true
+      },
+      {
+        "name": "index",
+        "required": false,
+        "default": -1
+      }
+    ]
+  },
+  {
+    "command": "get_polyhaven_status",
+    "module": "assets",
+    "doc": "Return availability status for Poly Haven.",
+    "params": []
+  },
+  {
+    "command": "get_polyhaven_categories",
+    "module": "assets",
+    "doc": "Return a list of categories for the given *asset_type*.",
+    "params": [
+      {
+        "name": "asset_type",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "search_polyhaven_assets",
+    "module": "assets",
+    "doc": "Search Poly Haven assets.",
+    "params": [
+      {
+        "name": "query",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "asset_type",
+        "required": false,
+        "default": "all"
+      },
+      {
+        "name": "categories",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "download_polyhaven_asset",
+    "module": "assets",
+    "doc": "Download and import a Poly Haven asset into the current Blender scene.",
+    "params": [
+      {
+        "name": "asset_id",
+        "required": true
+      },
+      {
+        "name": "asset_type",
+        "required": true
+      },
+      {
+        "name": "resolution",
+        "required": false,
+        "default": "1k"
+      }
+    ]
+  },
+  {
+    "command": "get_sketchfab_status",
+    "module": "assets",
+    "doc": "Return availability status for Sketchfab.",
+    "params": []
+  },
+  {
+    "command": "search_sketchfab_models",
+    "module": "assets",
+    "doc": "Search Sketchfab for 3D models.",
+    "params": [
+      {
+        "name": "query",
+        "required": true
+      },
+      {
+        "name": "categories",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "count",
+        "required": false,
+        "default": 10
+      },
+      {
+        "name": "downloadable",
+        "required": false,
+        "default": true
+      }
+    ]
+  },
+  {
+    "command": "download_sketchfab_model",
+    "module": "assets",
+    "doc": "Download and import a Sketchfab model into Blender.",
+    "params": [
+      {
+        "name": "model_uid",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "batch_render",
+    "module": "batch",
+    "doc": "Render from multiple cameras sequentially.",
+    "params": [
+      {
+        "name": "camera_names",
+        "required": true
+      },
+      {
+        "name": "output_dir",
+        "required": true
+      },
+      {
+        "name": "format",
+        "required": false,
+        "default": "PNG"
+      },
+      {
+        "name": "resolution_x",
+        "required": false,
+        "default": 1920
+      },
+      {
+        "name": "resolution_y",
+        "required": false,
+        "default": 1080
+      },
+      {
+        "name": "samples",
+        "required": false,
+        "default": 128
+      }
+    ]
+  },
+  {
+    "command": "render_turntable",
+    "module": "batch",
+    "doc": "Render a turntable animation around an object.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "frames",
+        "required": false,
+        "default": 36
+      },
+      {
+        "name": "output_dir",
+        "required": false,
+        "default": "//turntable/"
+      },
+      {
+        "name": "format",
+        "required": false,
+        "default": "PNG"
+      },
+      {
+        "name": "resolution_x",
+        "required": false,
+        "default": 1920
+      },
+      {
+        "name": "resolution_y",
+        "required": false,
+        "default": 1080
+      },
+      {
+        "name": "distance",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "batch_import",
+    "module": "batch",
+    "doc": "Import all files of a given format from a directory.",
+    "params": [
+      {
+        "name": "directory",
+        "required": true
+      },
+      {
+        "name": "format",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "recursive",
+        "required": false,
+        "default": false
+      }
+    ]
+  },
+  {
+    "command": "batch_export",
+    "module": "batch",
+    "doc": "Export objects to files.",
+    "params": [
+      {
+        "name": "object_names",
+        "required": true
+      },
+      {
+        "name": "directory",
+        "required": true
+      },
+      {
+        "name": "format",
+        "required": false,
+        "default": "FBX"
+      },
+      {
+        "name": "individual",
+        "required": false,
+        "default": true
+      }
+    ]
+  },
+  {
+    "command": "apply_material_to_all",
+    "module": "batch",
+    "doc": "Apply a material to objects.",
+    "params": [
+      {
+        "name": "material_name",
+        "required": true
+      },
+      {
+        "name": "object_names",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "list_operator_categories",
+    "module": "bridge",
+    "doc": "List every bpy.ops submodule available in this Blender build (100% live).",
+    "params": []
+  },
+  {
+    "command": "list_operators",
+    "module": "bridge",
+    "doc": "List operators (live). Filter by category and/or search. Default limit 500.",
+    "params": [
+      {
+        "name": "category",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "search",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "limit",
+        "required": false,
+        "default": 500
+      }
+    ]
+  },
+  {
+    "command": "search_operators",
+    "module": "bridge",
+    "doc": "Search all categories for operators matching query (substring).",
+    "params": [
+      {
+        "name": "query",
+        "required": true
+      },
+      {
+        "name": "limit",
+        "required": false,
+        "default": 100
+      }
+    ]
+  },
+  {
+    "command": "get_operator_info",
+    "module": "bridge",
+    "doc": "Return RNA property schema for any operator.",
+    "params": [
+      {
+        "name": "idname",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "poll_operator",
+    "module": "bridge",
+    "doc": "Check whether an operator can run in the current context (poll).",
+    "params": [
+      {
+        "name": "idname",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "call_operator",
+    "module": "bridge",
+    "doc": "Call any Blender operator (100% bpy.ops surface).",
+    "params": [
+      {
+        "name": "idname",
+        "required": true
+      },
+      {
+        "name": "params",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "execution_context",
+        "required": false,
+        "default": "EXEC_DEFAULT"
+      },
+      {
+        "name": "use_view3d_override",
+        "required": false,
+        "default": true
+      }
+    ]
+  },
+  {
+    "command": "call_operators_batch",
+    "module": "bridge",
+    "doc": "Run multiple operators in order.",
+    "params": [
+      {
+        "name": "calls",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "get_coverage_report",
+    "module": "bridge",
+    "doc": "Report live Blender coverage for Blender Studio Pro MCP.",
+    "params": []
+  },
+  {
+    "command": "list_data_types",
+    "module": "bridge",
+    "doc": "List bpy.data collection names (objects, meshes, materials, ...).",
+    "params": []
+  },
+  {
+    "command": "list_data_items",
+    "module": "bridge",
+    "doc": "List item names in a bpy.data collection.",
+    "params": [
+      {
+        "name": "data_type",
+        "required": true
+      },
+      {
+        "name": "limit",
+        "required": false,
+        "default": 200
+      }
+    ]
+  },
+  {
+    "command": "get_attr_path",
+    "module": "bridge",
+    "doc": "Read a value via path, e.g. 'context.scene.frame_current' or 'data.objects[\"Cube\"].location'.",
+    "params": [
+      {
+        "name": "path",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "set_attr_path",
+    "module": "bridge",
+    "doc": "Set a value via dotted path ending in an attribute name.",
+    "params": [
+      {
+        "name": "path",
+        "required": true
+      },
+      {
+        "name": "value",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "get_mode",
+    "module": "bridge",
+    "doc": "Return current object interaction mode.",
+    "params": []
+  },
+  {
+    "command": "set_mode",
+    "module": "bridge",
+    "doc": "Switch mode: OBJECT, EDIT, SCULPT, POSE, WEIGHT_PAINT, etc.",
+    "params": [
+      {
+        "name": "mode",
+        "required": true
+      },
+      {
+        "name": "object_name",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "get_selection",
+    "module": "bridge",
+    "doc": "Return selected object names and active object.",
+    "params": []
+  },
+  {
+    "command": "set_selection",
+    "module": "bridge",
+    "doc": "Select objects by name.",
+    "params": [
+      {
+        "name": "object_names",
+        "required": true
+      },
+      {
+        "name": "active",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "extend",
+        "required": false,
+        "default": false
+      }
+    ]
+  },
+  {
+    "command": "undo",
+    "module": "bridge",
+    "doc": "Undo last action.",
+    "params": []
+  },
+  {
+    "command": "redo",
+    "module": "bridge",
+    "doc": "Redo last undone action.",
+    "params": []
+  },
+  {
+    "command": "list_tool_categories",
+    "module": "bridge",
+    "doc": "High-level dedicated category map + pointer to 100% bpy.ops bridge.",
+    "params": []
+  },
+  {
+    "command": "list_dedicated_commands",
+    "module": "bridge",
+    "doc": "List all dedicated high-level commands registered in this addon.",
+    "params": []
+  },
+  {
+    "command": "create_camera",
+    "module": "camera",
+    "doc": "Create a camera and add it to the scene.",
+    "params": [
+      {
+        "name": "name",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "location",
+        "required": false,
+        "default": [
+          0,
+          0,
+          5
+        ]
+      },
+      {
+        "name": "rotation",
+        "required": false,
+        "default": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "lens",
+        "required": false,
+        "default": 50.0
+      }
+    ]
+  },
+  {
+    "command": "set_camera_lens",
+    "module": "camera",
+    "doc": "Configure lens, clipping, shift, sensor, and DOF settings on a camera.",
+    "params": [
+      {
+        "name": "camera_name",
+        "required": true
+      },
+      {
+        "name": "lens_type",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "focal_length",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "value",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "clip_start",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "clip_end",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "shift_x",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "shift_y",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "sensor_width",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "dof_focus_distance",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "dof_focus_object",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "dof_aperture_fstop",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "set_active_camera",
+    "module": "camera",
+    "doc": "Set the named camera as the active scene camera.",
+    "params": [
+      {
+        "name": "camera_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "frame_selected_objects",
+    "module": "camera",
+    "doc": "Position and orient a camera to frame the listed objects.",
+    "params": [
+      {
+        "name": "camera_name",
+        "required": true
+      },
+      {
+        "name": "object_names",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "add_camera_track_to",
+    "module": "camera",
+    "doc": "Add a Track To constraint to a camera, targeting the named object.",
+    "params": [
+      {
+        "name": "camera_name",
+        "required": true
+      },
+      {
+        "name": "target_object",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "list_cameras",
+    "module": "camera",
+    "doc": "Return a list of all camera objects in the scene.",
+    "params": []
+  },
+  {
+    "command": "get_camera_info",
+    "module": "camera",
+    "doc": "Return detailed information about a camera.",
+    "params": [
+      {
+        "name": "camera_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "execute_python",
+    "module": "code_exec",
+    "doc": "Execute arbitrary Python code in Blender's context.",
+    "params": [
+      {
+        "name": "code",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "list_collections",
+    "module": "collections_adv",
+    "doc": "Blender Studio Pro MCP: list_collections",
+    "params": []
+  },
+  {
+    "command": "create_collection_hierarchy",
+    "module": "collections_adv",
+    "doc": "Blender Studio Pro MCP: create_collection_hierarchy",
+    "params": [
+      {
+        "name": "name",
+        "required": true
+      },
+      {
+        "name": "parent",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "set_collection_visibility",
+    "module": "collections_adv",
+    "doc": "Blender Studio Pro MCP: set_collection_visibility",
+    "params": [
+      {
+        "name": "name",
+        "required": true
+      },
+      {
+        "name": "hide_viewport",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "hide_render",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "delete_collection",
+    "module": "collections_adv",
+    "doc": "Blender Studio Pro MCP: delete_collection",
+    "params": [
+      {
+        "name": "name",
+        "required": true
+      },
+      {
+        "name": "do_unlink_objects",
+        "required": false,
+        "default": false
+      }
+    ]
+  },
+  {
+    "command": "instance_collection",
+    "module": "collections_adv",
+    "doc": "Blender Studio Pro MCP: instance_collection",
+    "params": [
+      {
+        "name": "collection_name",
+        "required": true
+      },
+      {
+        "name": "name",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "location",
+        "required": false,
+        "default": [
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  {
+    "command": "ensure_compositor",
+    "module": "compositor",
+    "doc": "Blender Studio Pro MCP: ensure_compositor",
+    "params": []
+  },
+  {
+    "command": "get_compositor_tree",
+    "module": "compositor",
+    "doc": "Blender Studio Pro MCP: get_compositor_tree",
+    "params": []
+  },
+  {
+    "command": "add_compositor_node",
+    "module": "compositor",
+    "doc": "node_type e.g. CompositorNodeRLayers, CompositorNodeBlur, CompositorNodeComposite.",
+    "params": [
+      {
+        "name": "node_type",
+        "required": true
+      },
+      {
+        "name": "location",
+        "required": false,
+        "default": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "name",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "connect_compositor_nodes",
+    "module": "compositor",
+    "doc": "Blender Studio Pro MCP: connect_compositor_nodes",
+    "params": [
+      {
+        "name": "from_node",
+        "required": true
+      },
+      {
+        "name": "from_socket",
+        "required": true
+      },
+      {
+        "name": "to_node",
+        "required": true
+      },
+      {
+        "name": "to_socket",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "set_compositor_node_input",
+    "module": "compositor",
+    "doc": "Blender Studio Pro MCP: set_compositor_node_input",
+    "params": [
+      {
+        "name": "node_name",
+        "required": true
+      },
+      {
+        "name": "input_name",
+        "required": true
+      },
+      {
+        "name": "value",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "add_constraint",
+    "module": "constraints",
+    "doc": "Add an object constraint. See CONSTRAINT_TYPES.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "type",
+        "required": true
+      },
+      {
+        "name": "name",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "target",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "params",
+        "required": false,
+        "kwargs": true
+      }
+    ]
+  },
+  {
+    "command": "list_constraints",
+    "module": "constraints",
+    "doc": "Blender Studio Pro MCP: list_constraints",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "remove_constraint",
+    "module": "constraints",
+    "doc": "Blender Studio Pro MCP: remove_constraint",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "constraint_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "set_constraint_param",
+    "module": "constraints",
+    "doc": "Blender Studio Pro MCP: set_constraint_param",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "constraint_name",
+        "required": true
+      },
+      {
+        "name": "param",
+        "required": true
+      },
+      {
+        "name": "value",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "create_curve",
+    "module": "curves_text",
+    "doc": "type: BEZIER, NURBS, PATH",
+    "params": [
+      {
+        "name": "type",
+        "required": false,
+        "default": "BEZIER"
+      },
+      {
+        "name": "name",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "location",
+        "required": false,
+        "default": [
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  {
+    "command": "create_text",
+    "module": "curves_text",
+    "doc": "Blender Studio Pro MCP: create_text",
+    "params": [
+      {
+        "name": "body",
+        "required": false,
+        "default": "Text"
+      },
+      {
+        "name": "name",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "location",
+        "required": false,
+        "default": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "size",
+        "required": false,
+        "default": 1.0
+      },
+      {
+        "name": "extrude",
+        "required": false,
+        "default": 0.0
+      }
+    ]
+  },
+  {
+    "command": "set_text_body",
+    "module": "curves_text",
+    "doc": "Blender Studio Pro MCP: set_text_body",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "body",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "set_curve_geometry",
+    "module": "curves_text",
+    "doc": "Blender Studio Pro MCP: set_curve_geometry",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "bevel_depth",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "extrude",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "resolution_u",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "bevel_resolution",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "convert_to_mesh",
+    "module": "curves_text",
+    "doc": "Blender Studio Pro MCP: convert_to_mesh",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "add_driver",
+    "module": "drivers_props",
+    "doc": "Add a driver to an object property. data_path e.g. 'location'.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "data_path",
+        "required": true
+      },
+      {
+        "name": "index",
+        "required": false,
+        "default": -1
+      },
+      {
+        "name": "expression",
+        "required": false,
+        "default": "var"
+      }
+    ]
+  },
+  {
+    "command": "remove_driver",
+    "module": "drivers_props",
+    "doc": "Blender Studio Pro MCP: remove_driver",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "data_path",
+        "required": true
+      },
+      {
+        "name": "index",
+        "required": false,
+        "default": -1
+      }
+    ]
+  },
+  {
+    "command": "set_custom_property",
+    "module": "drivers_props",
+    "doc": "Blender Studio Pro MCP: set_custom_property",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "prop_name",
+        "required": true
+      },
+      {
+        "name": "value",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "get_custom_properties",
+    "module": "drivers_props",
+    "doc": "Blender Studio Pro MCP: get_custom_properties",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "delete_custom_property",
+    "module": "drivers_props",
+    "doc": "Blender Studio Pro MCP: delete_custom_property",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "prop_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "get_filepath",
+    "module": "files_blend",
+    "doc": "Blender Studio Pro MCP: get_filepath",
+    "params": []
+  },
+  {
+    "command": "save_blend",
+    "module": "files_blend",
+    "doc": "Blender Studio Pro MCP: save_blend",
+    "params": [
+      {
+        "name": "filepath",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "open_blend",
+    "module": "files_blend",
+    "doc": "Blender Studio Pro MCP: open_blend",
+    "params": [
+      {
+        "name": "filepath",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "new_blend",
+    "module": "files_blend",
+    "doc": "Blender Studio Pro MCP: new_blend",
+    "params": [
+      {
+        "name": "reset_ui",
+        "required": false,
+        "default": false
+      }
+    ]
+  },
+  {
+    "command": "append_from_blend",
+    "module": "files_blend",
+    "doc": "Append a datablock. directory e.g. 'Object/', filename e.g. 'Cube'.",
+    "params": [
+      {
+        "name": "filepath",
+        "required": true
+      },
+      {
+        "name": "directory",
+        "required": true
+      },
+      {
+        "name": "filename",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "link_from_blend",
+    "module": "files_blend",
+    "doc": "Blender Studio Pro MCP: link_from_blend",
+    "params": [
+      {
+        "name": "filepath",
+        "required": true
+      },
+      {
+        "name": "directory",
+        "required": true
+      },
+      {
+        "name": "filename",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "pack_resources",
+    "module": "files_blend",
+    "doc": "Blender Studio Pro MCP: pack_resources",
+    "params": []
+  },
+  {
+    "command": "unpack_resources",
+    "module": "files_blend",
+    "doc": "Blender Studio Pro MCP: unpack_resources",
+    "params": [
+      {
+        "name": "method",
+        "required": false,
+        "default": "USE_LOCAL"
+      }
+    ]
+  },
+  {
+    "command": "get_geometry_nodes_status",
+    "module": "geometry_nodes",
+    "doc": "Check if an object has Geometry Nodes modifiers and return their info.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "get_node_group_info",
+    "module": "geometry_nodes",
+    "doc": "Get detailed information about a node group including nodes, links, and group I/O.",
+    "params": [
+      {
+        "name": "node_group_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "create_geometry_nodes_modifier",
+    "module": "geometry_nodes",
+    "doc": "Add a Geometry Nodes modifier to an object, optionally using an existing node group.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "node_group_name",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "add_geometry_node",
+    "module": "geometry_nodes",
+    "doc": "Add a node of the given type to a geometry node group.",
+    "params": [
+      {
+        "name": "node_group_name",
+        "required": true
+      },
+      {
+        "name": "node_type",
+        "required": true
+      },
+      {
+        "name": "location",
+        "required": false,
+        "default": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "name",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "connect_gn_nodes",
+    "module": "geometry_nodes",
+    "doc": "Create a link between two nodes in a geometry node group.",
+    "params": [
+      {
+        "name": "node_group_name",
+        "required": true
+      },
+      {
+        "name": "from_node",
+        "required": true
+      },
+      {
+        "name": "from_socket",
+        "required": true
+      },
+      {
+        "name": "to_node",
+        "required": true
+      },
+      {
+        "name": "to_socket",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "set_gn_node_input",
+    "module": "geometry_nodes",
+    "doc": "Set the default value of a node input in a geometry node group.",
+    "params": [
+      {
+        "name": "node_group_name",
+        "required": true
+      },
+      {
+        "name": "node_name",
+        "required": true
+      },
+      {
+        "name": "input_name",
+        "required": true
+      },
+      {
+        "name": "value",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "add_gn_group_input",
+    "module": "geometry_nodes",
+    "doc": "Add a group-level input socket to a geometry node group.",
+    "params": [
+      {
+        "name": "node_group_name",
+        "required": true
+      },
+      {
+        "name": "input_name",
+        "required": true
+      },
+      {
+        "name": "input_type",
+        "required": true
+      },
+      {
+        "name": "default_value",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "add_gn_group_output",
+    "module": "geometry_nodes",
+    "doc": "Add a group-level output socket to a geometry node group.",
+    "params": [
+      {
+        "name": "node_group_name",
+        "required": true
+      },
+      {
+        "name": "output_name",
+        "required": true
+      },
+      {
+        "name": "output_type",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "list_gn_node_types",
+    "module": "geometry_nodes",
+    "doc": "Return a categorized dictionary of available geometry node types.",
+    "params": []
+  },
+  {
+    "command": "get_gn_node_tree",
+    "module": "geometry_nodes",
+    "doc": "Return the full node tree structure: nodes with input values and links.",
+    "params": [
+      {
+        "name": "node_group_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "apply_geometry_nodes",
+    "module": "geometry_nodes",
+    "doc": "Apply a Geometry Nodes modifier on an object.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "modifier_name",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "remove_geometry_node",
+    "module": "geometry_nodes",
+    "doc": "Remove a node from a geometry node group.",
+    "params": [
+      {
+        "name": "node_group_name",
+        "required": true
+      },
+      {
+        "name": "node_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "create_grease_pencil",
+    "module": "grease_pencil",
+    "doc": "Create a grease pencil object (Blender 4+/5 compatible).",
+    "params": [
+      {
+        "name": "name",
+        "required": false,
+        "default": "GPencil"
+      },
+      {
+        "name": "location",
+        "required": false,
+        "default": [
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  {
+    "command": "add_gp_layer",
+    "module": "grease_pencil",
+    "doc": "Blender Studio Pro MCP: add_gp_layer",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "layer_name",
+        "required": false,
+        "default": "Layer"
+      }
+    ]
+  },
+  {
+    "command": "list_gp_layers",
+    "module": "grease_pencil",
+    "doc": "Blender Studio Pro MCP: list_gp_layers",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "set_gp_stroke_settings",
+    "module": "grease_pencil",
+    "doc": "Best-effort material/color setup for GP.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "color",
+        "required": false,
+        "default": [
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "name": "strength",
+        "required": false,
+        "default": 1.0
+      }
+    ]
+  },
+  {
+    "command": "import_file",
+    "module": "io_handlers",
+    "doc": "Import a file into Blender.",
+    "params": [
+      {
+        "name": "filepath",
+        "required": true
+      },
+      {
+        "name": "format",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "export_object",
+    "module": "io_handlers",
+    "doc": "Export specific objects to a file.",
+    "params": [
+      {
+        "name": "object_names",
+        "required": true
+      },
+      {
+        "name": "filepath",
+        "required": true
+      },
+      {
+        "name": "format",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "export_scene",
+    "module": "io_handlers",
+    "doc": "Export the entire scene to a file.",
+    "params": [
+      {
+        "name": "filepath",
+        "required": true
+      },
+      {
+        "name": "format",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "import_image_as_plane",
+    "module": "io_handlers",
+    "doc": "Import an image file as a textured plane in the scene.",
+    "params": [
+      {
+        "name": "filepath",
+        "required": true
+      },
+      {
+        "name": "location",
+        "required": false,
+        "default": [
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  {
+    "command": "create_light",
+    "module": "lights",
+    "doc": "Create a light of the given type and add it to the scene.",
+    "params": [
+      {
+        "name": "type",
+        "required": false,
+        "default": "POINT"
+      },
+      {
+        "name": "name",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "location",
+        "required": false,
+        "default": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "rotation",
+        "required": false,
+        "default": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "energy",
+        "required": false,
+        "default": 10.0
+      },
+      {
+        "name": "color",
+        "required": false,
+        "default": [
+          1,
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "command": "set_light_property",
+    "module": "lights",
+    "doc": "Set a property on a light's data block.",
+    "params": [
+      {
+        "name": "name",
+        "required": true
+      },
+      {
+        "name": "property",
+        "required": true
+      },
+      {
+        "name": "value",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "delete_light",
+    "module": "lights",
+    "doc": "Delete a light object from the scene and Blender data.",
+    "params": [
+      {
+        "name": "name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "list_lights",
+    "module": "lights",
+    "doc": "Return a list of all light objects in the scene.",
+    "params": []
+  },
+  {
+    "command": "create_three_point_lighting",
+    "module": "lights",
+    "doc": "Create a classic three-point lighting setup aimed at a subject.",
+    "params": [
+      {
+        "name": "subject_name",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "key_energy",
+        "required": false,
+        "default": 1000
+      },
+      {
+        "name": "fill_energy",
+        "required": false,
+        "default": 500
+      },
+      {
+        "name": "rim_energy",
+        "required": false,
+        "default": 750
+      }
+    ]
+  },
+  {
+    "command": "create_material",
+    "module": "materials",
+    "doc": "Create a new material with nodes enabled.",
+    "params": [
+      {
+        "name": "name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "assign_material",
+    "module": "materials",
+    "doc": "Assign a material to an object.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "material_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "set_principled_bsdf",
+    "module": "materials",
+    "doc": "Set Principled BSDF node properties on a material.",
+    "params": [
+      {
+        "name": "material_name",
+        "required": true
+      },
+      {
+        "name": "base_color",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "metallic",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "roughness",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "specular",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "emission_color",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "emission_strength",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "alpha",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "transmission_weight",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "transmission",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "ior",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "subsurface_weight",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "coat_weight",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "sheen_weight",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "anisotropic",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "normal_strength",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "get_material_info",
+    "module": "materials",
+    "doc": "Return detailed information about a material's node tree.",
+    "params": [
+      {
+        "name": "material_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "list_materials",
+    "module": "materials",
+    "doc": "Return a list of all material names in the blend file.",
+    "params": []
+  },
+  {
+    "command": "delete_material",
+    "module": "materials",
+    "doc": "Remove a material from bpy.data.materials.",
+    "params": [
+      {
+        "name": "name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "set_material_slot",
+    "module": "materials",
+    "doc": "Set a specific material slot on an object to a given material.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "slot_index",
+        "required": true
+      },
+      {
+        "name": "material_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "enter_edit_mode",
+    "module": "mesh_edit",
+    "doc": "Blender Studio Pro MCP: enter_edit_mode",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "mesh_select_all",
+    "module": "mesh_edit",
+    "doc": "action: SELECT, DESELECT, TOGGLE, INVERT",
+    "params": [
+      {
+        "name": "action",
+        "required": false,
+        "default": "SELECT"
+      }
+    ]
+  },
+  {
+    "command": "subdivide",
+    "module": "mesh_edit",
+    "doc": "Blender Studio Pro MCP: subdivide",
+    "params": [
+      {
+        "name": "number_cuts",
+        "required": false,
+        "default": 1
+      },
+      {
+        "name": "smoothness",
+        "required": false,
+        "default": 0.0
+      }
+    ]
+  },
+  {
+    "command": "extrude_region",
+    "module": "mesh_edit",
+    "doc": "Blender Studio Pro MCP: extrude_region",
+    "params": [
+      {
+        "name": "value",
+        "required": false,
+        "default": 1.0
+      }
+    ]
+  },
+  {
+    "command": "inset_faces",
+    "module": "mesh_edit",
+    "doc": "Blender Studio Pro MCP: inset_faces",
+    "params": [
+      {
+        "name": "thickness",
+        "required": false,
+        "default": 0.1
+      },
+      {
+        "name": "depth",
+        "required": false,
+        "default": 0.0
+      }
+    ]
+  },
+  {
+    "command": "bevel",
+    "module": "mesh_edit",
+    "doc": "Blender Studio Pro MCP: bevel",
+    "params": [
+      {
+        "name": "offset",
+        "required": false,
+        "default": 0.1
+      },
+      {
+        "name": "segments",
+        "required": false,
+        "default": 1
+      }
+    ]
+  },
+  {
+    "command": "loop_cut",
+    "module": "mesh_edit",
+    "doc": "Loop cut — best effort; may need viewport context.",
+    "params": [
+      {
+        "name": "number_cuts",
+        "required": false,
+        "default": 1
+      },
+      {
+        "name": "edge_index",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "delete_geometry",
+    "module": "mesh_edit",
+    "doc": "type: VERT, EDGE, FACE, ONLY_FACE, EDGE_FACE",
+    "params": [
+      {
+        "name": "type",
+        "required": false,
+        "default": "VERT"
+      }
+    ]
+  },
+  {
+    "command": "merge_by_distance",
+    "module": "mesh_edit",
+    "doc": "Blender Studio Pro MCP: merge_by_distance",
+    "params": [
+      {
+        "name": "threshold",
+        "required": false,
+        "default": 0.0001
+      }
+    ]
+  },
+  {
+    "command": "get_mesh_stats",
+    "module": "mesh_edit",
+    "doc": "Blender Studio Pro MCP: get_mesh_stats",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "apply_bmesh_op",
+    "module": "mesh_edit",
+    "doc": "Run a simple bmesh operation: recalc_normals, triangulate, remove_doubles.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "operation",
+        "required": false,
+        "default": "recalc_normals"
+      }
+    ]
+  },
+  {
+    "command": "add_modifier",
+    "module": "modifiers",
+    "doc": "Add a modifier to an object.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "type",
+        "required": true
+      },
+      {
+        "name": "name",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "params",
+        "required": false,
+        "kwargs": true
+      }
+    ]
+  },
+  {
+    "command": "set_modifier_param",
+    "module": "modifiers",
+    "doc": "Set an attribute on a modifier.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "modifier_name",
+        "required": true
+      },
+      {
+        "name": "param",
+        "required": true
+      },
+      {
+        "name": "value",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "apply_modifier",
+    "module": "modifiers",
+    "doc": "Apply a modifier to an object.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "modifier_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "remove_modifier",
+    "module": "modifiers",
+    "doc": "Remove a modifier from an object.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "modifier_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "list_modifiers",
+    "module": "modifiers",
+    "doc": "List all modifiers on an object.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "reorder_modifier",
+    "module": "modifiers",
+    "doc": "Reorder a modifier up or down in the stack.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "modifier_name",
+        "required": true
+      },
+      {
+        "name": "direction",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "create_object",
+    "module": "objects",
+    "doc": "Create a new object of the specified type.",
+    "params": [
+      {
+        "name": "type",
+        "required": true
+      },
+      {
+        "name": "name",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "location",
+        "required": false,
+        "default": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "rotation",
+        "required": false,
+        "default": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "scale",
+        "required": false,
+        "default": [
+          1,
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "command": "delete_object",
+    "module": "objects",
+    "doc": "Delete an object by name.",
+    "params": [
+      {
+        "name": "name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "duplicate_object",
+    "module": "objects",
+    "doc": "Duplicate an object, optionally as a linked duplicate.",
+    "params": [
+      {
+        "name": "name",
+        "required": true
+      },
+      {
+        "name": "linked",
+        "required": false,
+        "default": false
+      }
+    ]
+  },
+  {
+    "command": "set_transform",
+    "module": "objects",
+    "doc": "Set the transform of an object. Only provided values are updated.",
+    "params": [
+      {
+        "name": "name",
+        "required": true
+      },
+      {
+        "name": "location",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "rotation",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "scale",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "set_parent",
+    "module": "objects",
+    "doc": "Set a parent-child relationship between two objects.",
+    "params": [
+      {
+        "name": "child",
+        "required": true
+      },
+      {
+        "name": "parent",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "clear_parent",
+    "module": "objects",
+    "doc": "Clear the parent of an object, optionally keeping its world transform.",
+    "params": [
+      {
+        "name": "name",
+        "required": true
+      },
+      {
+        "name": "keep_transform",
+        "required": false,
+        "default": true
+      }
+    ]
+  },
+  {
+    "command": "create_collection",
+    "module": "objects",
+    "doc": "Create a new collection and link it to the active scene.",
+    "params": [
+      {
+        "name": "name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "move_to_collection",
+    "module": "objects",
+    "doc": "Move an object to a target collection, unlinking from all current collections.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "collection_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "join_objects",
+    "module": "objects",
+    "doc": "Join multiple objects into one.",
+    "params": [
+      {
+        "name": "object_names",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "add_particle_system",
+    "module": "particles",
+    "doc": "type: EMITTER or HAIR.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "name",
+        "required": false,
+        "default": "ParticleSystem"
+      },
+      {
+        "name": "type",
+        "required": false,
+        "default": "EMITTER"
+      },
+      {
+        "name": "count",
+        "required": false,
+        "default": 1000
+      }
+    ]
+  },
+  {
+    "command": "set_particle_settings",
+    "module": "particles",
+    "doc": "Set particle settings attributes (count, lifetime, frame_start, ...).",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "system_name",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "params",
+        "required": false,
+        "kwargs": true
+      }
+    ]
+  },
+  {
+    "command": "list_particle_systems",
+    "module": "particles",
+    "doc": "Blender Studio Pro MCP: list_particle_systems",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "remove_particle_system",
+    "module": "particles",
+    "doc": "Blender Studio Pro MCP: remove_particle_system",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "system_name",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "add_rigid_body",
+    "module": "physics",
+    "doc": "Add rigid body physics. type: ACTIVE or PASSIVE.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "type",
+        "required": false,
+        "default": "ACTIVE"
+      },
+      {
+        "name": "mass",
+        "required": false,
+        "default": 1.0
+      }
+    ]
+  },
+  {
+    "command": "remove_rigid_body",
+    "module": "physics",
+    "doc": "Blender Studio Pro MCP: remove_rigid_body",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "add_cloth",
+    "module": "physics",
+    "doc": "Blender Studio Pro MCP: add_cloth",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "add_soft_body",
+    "module": "physics",
+    "doc": "Blender Studio Pro MCP: add_soft_body",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "add_collision",
+    "module": "physics",
+    "doc": "Blender Studio Pro MCP: add_collision",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "add_fluid_domain",
+    "module": "physics",
+    "doc": "domain_type: GAS, LIQUID.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "domain_type",
+        "required": false,
+        "default": "LIQUID"
+      }
+    ]
+  },
+  {
+    "command": "add_fluid_flow",
+    "module": "physics",
+    "doc": "flow_type: SMOKE, FIRE, LIQUID, etc.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "flow_type",
+        "required": false,
+        "default": "SMOKE"
+      }
+    ]
+  },
+  {
+    "command": "bake_physics",
+    "module": "physics",
+    "doc": "Bake rigid body / point cache where possible.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "add_force_field",
+    "module": "physics",
+    "doc": "Create a force field empty. type: FORCE, WIND, VORTEX, MAGNET, ...",
+    "params": [
+      {
+        "name": "type",
+        "required": false,
+        "default": "FORCE"
+      },
+      {
+        "name": "name",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "location",
+        "required": false,
+        "default": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "strength",
+        "required": false,
+        "default": 1.0
+      }
+    ]
+  },
+  {
+    "command": "get_viewport_screenshot",
+    "module": "render",
+    "doc": "Capture a screenshot of the active 3D viewport.",
+    "params": [
+      {
+        "name": "filepath",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "set_render_engine",
+    "module": "render",
+    "doc": "Set the render engine.",
+    "params": [
+      {
+        "name": "engine",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "render_image",
+    "module": "render",
+    "doc": "Render the current scene to an image file.",
+    "params": [
+      {
+        "name": "output_path",
+        "required": true
+      },
+      {
+        "name": "resolution_x",
+        "required": false,
+        "default": 1920
+      },
+      {
+        "name": "resolution_y",
+        "required": false,
+        "default": 1080
+      },
+      {
+        "name": "samples",
+        "required": false,
+        "default": 128
+      },
+      {
+        "name": "engine",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "set_render_output",
+    "module": "render",
+    "doc": "Configure render output settings.",
+    "params": [
+      {
+        "name": "format",
+        "required": false,
+        "default": "PNG"
+      },
+      {
+        "name": "path",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "color_depth",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "compression",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "quality",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "set_render_settings",
+    "module": "render",
+    "doc": "Set various render settings for the active scene.",
+    "params": [
+      {
+        "name": "samples",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "use_denoising",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "denoiser",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "film_transparent",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "use_motion_blur",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "use_bloom",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "use_ambient_occlusion",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "create_armature",
+    "module": "rigging",
+    "doc": "Create an armature data block and object, link to the active scene.",
+    "params": [
+      {
+        "name": "name",
+        "required": false,
+        "default": "Armature"
+      },
+      {
+        "name": "location",
+        "required": false,
+        "default": [
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  {
+    "command": "add_bone",
+    "module": "rigging",
+    "doc": "Add a bone to an armature with specified head/tail positions and optional parent.",
+    "params": [
+      {
+        "name": "armature_name",
+        "required": true
+      },
+      {
+        "name": "bone_name",
+        "required": true
+      },
+      {
+        "name": "head",
+        "required": false,
+        "default": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "tail",
+        "required": false,
+        "default": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "name": "parent_bone",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "set_bone_property",
+    "module": "rigging",
+    "doc": "Set a property on a bone in edit mode.",
+    "params": [
+      {
+        "name": "armature_name",
+        "required": true
+      },
+      {
+        "name": "bone_name",
+        "required": true
+      },
+      {
+        "name": "property",
+        "required": true
+      },
+      {
+        "name": "value",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "delete_bone",
+    "module": "rigging",
+    "doc": "Delete a bone from an armature.",
+    "params": [
+      {
+        "name": "armature_name",
+        "required": true
+      },
+      {
+        "name": "bone_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "list_bones",
+    "module": "rigging",
+    "doc": "Return a list of all bones in an armature with their properties.",
+    "params": [
+      {
+        "name": "armature_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "parent_mesh_to_armature",
+    "module": "rigging",
+    "doc": "Parent a mesh object to an armature with the specified skinning method.",
+    "params": [
+      {
+        "name": "mesh_name",
+        "required": true
+      },
+      {
+        "name": "armature_name",
+        "required": true
+      },
+      {
+        "name": "method",
+        "required": false,
+        "default": "AUTOMATIC"
+      }
+    ]
+  },
+  {
+    "command": "add_bone_constraint",
+    "module": "rigging",
+    "doc": "Add a constraint to a pose bone.",
+    "params": [
+      {
+        "name": "armature_name",
+        "required": true
+      },
+      {
+        "name": "bone_name",
+        "required": true
+      },
+      {
+        "name": "constraint_type",
+        "required": true
+      },
+      {
+        "name": "params",
+        "required": false,
+        "kwargs": true
+      }
+    ]
+  },
+  {
+    "command": "create_vertex_group",
+    "module": "rigging",
+    "doc": "Add a vertex group to a mesh object, optionally assigning vertices with a weight.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "group_name",
+        "required": true
+      },
+      {
+        "name": "vertex_indices",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "weight",
+        "required": false,
+        "default": 1.0
+      }
+    ]
+  },
+  {
+    "command": "get_scene_info",
+    "module": "scene",
+    "doc": "Return comprehensive information about the current Blender scene.",
+    "params": []
+  },
+  {
+    "command": "get_object_info",
+    "module": "scene",
+    "doc": "Return detailed information about a specific object.",
+    "params": [
+      {
+        "name": "name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "enter_sculpt_mode",
+    "module": "sculpt_paint",
+    "doc": "Blender Studio Pro MCP: enter_sculpt_mode",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "set_sculpt_brush",
+    "module": "sculpt_paint",
+    "doc": "Configure active sculpt brush.",
+    "params": [
+      {
+        "name": "brush_name",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "size",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "strength",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "list_brushes",
+    "module": "sculpt_paint",
+    "doc": "List brushes. mode hint only; returns all brush names with use flags.",
+    "params": [
+      {
+        "name": "mode",
+        "required": false,
+        "default": "sculpt"
+      }
+    ]
+  },
+  {
+    "command": "enter_vertex_paint",
+    "module": "sculpt_paint",
+    "doc": "Blender Studio Pro MCP: enter_vertex_paint",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "enter_weight_paint",
+    "module": "sculpt_paint",
+    "doc": "Blender Studio Pro MCP: enter_weight_paint",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "enter_texture_paint",
+    "module": "sculpt_paint",
+    "doc": "Blender Studio Pro MCP: enter_texture_paint",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "remesh",
+    "module": "sculpt_paint",
+    "doc": "Remesh mesh. mode: VOXEL, SMOOTH, SHARP, BLOCKS.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "mode",
+        "required": false,
+        "default": "VOXEL"
+      },
+      {
+        "name": "voxel_size",
+        "required": false,
+        "default": 0.1
+      }
+    ]
+  },
+  {
+    "command": "get_sequencer_info",
+    "module": "sequencer",
+    "doc": "Blender Studio Pro MCP: get_sequencer_info",
+    "params": []
+  },
+  {
+    "command": "add_movie_strip",
+    "module": "sequencer",
+    "doc": "Blender Studio Pro MCP: add_movie_strip",
+    "params": [
+      {
+        "name": "filepath",
+        "required": true
+      },
+      {
+        "name": "channel",
+        "required": false,
+        "default": 1
+      },
+      {
+        "name": "frame_start",
+        "required": false,
+        "default": 1
+      },
+      {
+        "name": "name",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "add_image_strip",
+    "module": "sequencer",
+    "doc": "Blender Studio Pro MCP: add_image_strip",
+    "params": [
+      {
+        "name": "filepath",
+        "required": true
+      },
+      {
+        "name": "channel",
+        "required": false,
+        "default": 1
+      },
+      {
+        "name": "frame_start",
+        "required": false,
+        "default": 1
+      },
+      {
+        "name": "frame_duration",
+        "required": false,
+        "default": 25
+      },
+      {
+        "name": "name",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "add_sound_strip",
+    "module": "sequencer",
+    "doc": "Blender Studio Pro MCP: add_sound_strip",
+    "params": [
+      {
+        "name": "filepath",
+        "required": true
+      },
+      {
+        "name": "channel",
+        "required": false,
+        "default": 1
+      },
+      {
+        "name": "frame_start",
+        "required": false,
+        "default": 1
+      },
+      {
+        "name": "name",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "remove_strip",
+    "module": "sequencer",
+    "doc": "Blender Studio Pro MCP: remove_strip",
+    "params": [
+      {
+        "name": "strip_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "create_shader_node",
+    "module": "shader_nodes",
+    "doc": "Create a shader node in the specified material's node tree.",
+    "params": [
+      {
+        "name": "material_name",
+        "required": true
+      },
+      {
+        "name": "node_type",
+        "required": true
+      },
+      {
+        "name": "location",
+        "required": false,
+        "default": [
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  {
+    "command": "connect_shader_nodes",
+    "module": "shader_nodes",
+    "doc": "Connect two shader nodes via their sockets.",
+    "params": [
+      {
+        "name": "material_name",
+        "required": true
+      },
+      {
+        "name": "from_node",
+        "required": true
+      },
+      {
+        "name": "from_socket",
+        "required": true
+      },
+      {
+        "name": "to_node",
+        "required": true
+      },
+      {
+        "name": "to_socket",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "disconnect_shader_nodes",
+    "module": "shader_nodes",
+    "doc": "Remove links connected to a specific input on a node.",
+    "params": [
+      {
+        "name": "material_name",
+        "required": true
+      },
+      {
+        "name": "node_name",
+        "required": true
+      },
+      {
+        "name": "input_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "set_shader_node_value",
+    "module": "shader_nodes",
+    "doc": "Set the default_value of a node input. Handles float, vector, and color.",
+    "params": [
+      {
+        "name": "material_name",
+        "required": true
+      },
+      {
+        "name": "node_name",
+        "required": true
+      },
+      {
+        "name": "input_name",
+        "required": true
+      },
+      {
+        "name": "value",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "get_shader_node_tree",
+    "module": "shader_nodes",
+    "doc": "Return the full node tree: nodes with inputs and links.",
+    "params": [
+      {
+        "name": "material_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "delete_shader_node",
+    "module": "shader_nodes",
+    "doc": "Remove a node from the material's node tree.",
+    "params": [
+      {
+        "name": "material_name",
+        "required": true
+      },
+      {
+        "name": "node_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "add_image_texture_node",
+    "module": "shader_nodes",
+    "doc": "Create a ShaderNodeTexImage and load an image from the given path.",
+    "params": [
+      {
+        "name": "material_name",
+        "required": true
+      },
+      {
+        "name": "image_path",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "create_emission_material",
+    "module": "shader_nodes",
+    "doc": "Create a material with an Emission shader connected to the output.",
+    "params": [
+      {
+        "name": "name",
+        "required": true
+      },
+      {
+        "name": "color",
+        "required": false,
+        "default": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "strength",
+        "required": false,
+        "default": 1.0
+      }
+    ]
+  },
+  {
+    "command": "create_glass_material",
+    "module": "shader_nodes",
+    "doc": "Create a material with a Glass BSDF shader connected to the output.",
+    "params": [
+      {
+        "name": "name",
+        "required": true
+      },
+      {
+        "name": "color",
+        "required": false,
+        "default": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "ior",
+        "required": false,
+        "default": 1.45
+      },
+      {
+        "name": "roughness",
+        "required": false,
+        "default": 0.0
+      }
+    ]
+  },
+  {
+    "command": "set_shader_node_property",
+    "module": "shader_nodes",
+    "doc": "Set a property directly on a node (e.g., blend_type, operation, interpolation).",
+    "params": [
+      {
+        "name": "material_name",
+        "required": true
+      },
+      {
+        "name": "node_name",
+        "required": true
+      },
+      {
+        "name": "property_name",
+        "required": true
+      },
+      {
+        "name": "value",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "add_shape_key",
+    "module": "shapekeys",
+    "doc": "Blender Studio Pro MCP: add_shape_key",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "name",
+        "required": false,
+        "default": "Key"
+      },
+      {
+        "name": "from_mix",
+        "required": false,
+        "default": false
+      }
+    ]
+  },
+  {
+    "command": "list_shape_keys",
+    "module": "shapekeys",
+    "doc": "Blender Studio Pro MCP: list_shape_keys",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "set_shape_key_value",
+    "module": "shapekeys",
+    "doc": "Blender Studio Pro MCP: set_shape_key_value",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "key_name",
+        "required": true
+      },
+      {
+        "name": "value",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "remove_shape_key",
+    "module": "shapekeys",
+    "doc": "Blender Studio Pro MCP: remove_shape_key",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "key_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "add_marker",
+    "module": "timeline",
+    "doc": "Blender Studio Pro MCP: add_marker",
+    "params": [
+      {
+        "name": "name",
+        "required": true
+      },
+      {
+        "name": "frame",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "list_markers",
+    "module": "timeline",
+    "doc": "Blender Studio Pro MCP: list_markers",
+    "params": []
+  },
+  {
+    "command": "remove_marker",
+    "module": "timeline",
+    "doc": "Blender Studio Pro MCP: remove_marker",
+    "params": [
+      {
+        "name": "name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "play_animation",
+    "module": "timeline",
+    "doc": "Blender Studio Pro MCP: play_animation",
+    "params": []
+  },
+  {
+    "command": "stop_animation",
+    "module": "timeline",
+    "doc": "Blender Studio Pro MCP: stop_animation",
+    "params": []
+  },
+  {
+    "command": "set_preview_range",
+    "module": "timeline",
+    "doc": "Blender Studio Pro MCP: set_preview_range",
+    "params": [
+      {
+        "name": "start",
+        "required": true
+      },
+      {
+        "name": "end",
+        "required": true
+      },
+      {
+        "name": "enabled",
+        "required": false,
+        "default": true
+      }
+    ]
+  },
+  {
+    "command": "unwrap_uv",
+    "module": "uv_texture",
+    "doc": "Unwrap UVs for a mesh object using the specified method.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "method",
+        "required": false,
+        "default": "SMART_PROJECT"
+      },
+      {
+        "name": "angle_limit",
+        "required": false,
+        "default": 66.0
+      },
+      {
+        "name": "island_margin",
+        "required": false,
+        "default": 0.02
+      },
+      {
+        "name": "correct_aspect",
+        "required": false,
+        "default": true
+      }
+    ]
+  },
+  {
+    "command": "bake_texture",
+    "module": "uv_texture",
+    "doc": "Bake a texture map for the specified object using Cycles.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "bake_type",
+        "required": true
+      },
+      {
+        "name": "resolution",
+        "required": false,
+        "default": 1024
+      },
+      {
+        "name": "output_path",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "samples",
+        "required": false,
+        "default": 16
+      },
+      {
+        "name": "margin",
+        "required": false,
+        "default": 16
+      }
+    ]
+  },
+  {
+    "command": "create_uv_map",
+    "module": "uv_texture",
+    "doc": "Create a new UV map on the specified mesh object.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "name",
+        "required": false,
+        "default": "UVMap"
+      }
+    ]
+  },
+  {
+    "command": "set_active_uv_map",
+    "module": "uv_texture",
+    "doc": "Set the active UV map on the specified object.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "uv_map_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "list_uv_maps",
+    "module": "uv_texture",
+    "doc": "List all UV maps on the specified object.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      }
+    ]
+  },
+  {
+    "command": "project_from_view",
+    "module": "uv_texture",
+    "doc": "Project UVs from a camera or the scene's active camera.",
+    "params": [
+      {
+        "name": "object_name",
+        "required": true
+      },
+      {
+        "name": "camera_name",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "set_viewport_shading",
+    "module": "viewport",
+    "doc": "shading_type: WIREFRAME, SOLID, MATERIAL, RENDERED",
+    "params": [
+      {
+        "name": "shading_type",
+        "required": false,
+        "default": "SOLID"
+      }
+    ]
+  },
+  {
+    "command": "set_3d_cursor",
+    "module": "viewport",
+    "doc": "Blender Studio Pro MCP: set_3d_cursor",
+    "params": [
+      {
+        "name": "location",
+        "required": false,
+        "default": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "rotation",
+        "required": false,
+        "default": null
+      }
+    ]
+  },
+  {
+    "command": "get_3d_cursor",
+    "module": "viewport",
+    "doc": "Blender Studio Pro MCP: get_3d_cursor",
+    "params": []
+  },
+  {
+    "command": "snap_cursor_to_selected",
+    "module": "viewport",
+    "doc": "Blender Studio Pro MCP: snap_cursor_to_selected",
+    "params": []
+  },
+  {
+    "command": "snap_selected_to_cursor",
+    "module": "viewport",
+    "doc": "Blender Studio Pro MCP: snap_selected_to_cursor",
+    "params": [
+      {
+        "name": "offset",
+        "required": false,
+        "default": false
+      }
+    ]
+  },
+  {
+    "command": "frame_all",
+    "module": "viewport",
+    "doc": "Blender Studio Pro MCP: frame_all",
+    "params": []
+  },
+  {
+    "command": "frame_selected",
+    "module": "viewport",
+    "doc": "Blender Studio Pro MCP: frame_selected",
+    "params": []
+  },
+  {
+    "command": "set_pivot_point",
+    "module": "viewport",
+    "doc": "ACTIVE_ELEMENT, MEDIAN_POINT, INDIVIDUAL_ORIGINS, CURSOR, BOUNDING_BOX_CENTER",
+    "params": [
+      {
+        "name": "type",
+        "required": false,
+        "default": "MEDIAN_POINT"
+      }
+    ]
+  },
+  {
+    "command": "get_world_info",
+    "module": "world_env",
+    "doc": "Blender Studio Pro MCP: get_world_info",
+    "params": []
+  },
+  {
+    "command": "ensure_world",
+    "module": "world_env",
+    "doc": "Blender Studio Pro MCP: ensure_world",
+    "params": [
+      {
+        "name": "name",
+        "required": false,
+        "default": "World"
+      }
+    ]
+  },
+  {
+    "command": "set_world_background",
+    "module": "world_env",
+    "doc": "Set Background shader color/strength on the world.",
+    "params": [
+      {
+        "name": "color",
+        "required": false,
+        "default": [
+          0.05,
+          0.05,
+          0.05,
+          1.0
+        ]
+      },
+      {
+        "name": "strength",
+        "required": false,
+        "default": 1.0
+      }
+    ]
+  },
+  {
+    "command": "set_hdri",
+    "module": "world_env",
+    "doc": "Load an HDRI/environment texture into the world.",
+    "params": [
+      {
+        "name": "filepath",
+        "required": true
+      },
+      {
+        "name": "strength",
+        "required": false,
+        "default": 1.0
+      }
+    ]
+  },
+  {
+    "command": "set_color_management",
+    "module": "world_env",
+    "doc": "Blender Studio Pro MCP: set_color_management",
+    "params": [
+      {
+        "name": "display_device",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "view_transform",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "look",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "exposure",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "gamma",
+        "required": false,
+        "default": null
+      }
+    ]
+  }
+]

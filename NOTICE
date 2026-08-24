@@ -1,0 +1,10 @@
+Blender Studio Pro MCP
+Copyright 2026 Cristofer Arango
+
+Website: https://corporacionarango.com
+
+This product is licensed under the Apache License, Version 2.0.
+See the LICENSE file for the full license text.
+
+Blender Studio Pro MCP provides 100% Blender control (all bpy.ops categories)
+to any MCP-compatible client including Cursor, Claude, Codex, OpenCode, and DeepSeek.
