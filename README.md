@@ -7,20 +7,18 @@
 - **License:** [Apache License 2.0](LICENSE)  
 - **No license keys. Local only. Clone on any device.**
 
-## What “100%” means
+## Capabilities
 
-Blender ships **~70+ `bpy.ops` categories** and typically **1500–2500+ operators**.  
-Blender Studio Pro MCP covers them completely:
+| | |
+|--|--|
+| Dedicated tools | **221** |
+| Modules | **33** |
+| `bpy.ops` categories | **70+** |
+| Operators (via universal bridge) | **1,500–2,500+** |
 
-| Layer | Capability |
-|-------|------------|
-| **Universal bridge** | `get_coverage_report` · `list_operator_categories` · `search_operators` · `get_operator_info` · `poll_operator` · `call_operator` · `call_operators_batch` |
-| **Dedicated tools** | 200+ high-level tools (materials, physics, sculpt, VSE, GP, compositor, mesh edit, …) |
-| **Python** | `execute_python` for any `bpy` / `bmesh` |
+**221 dedicated tools · 33 modules · 70+ bpy.ops categories · 1,500–2,500+ operators**
 
-So agents can do **everything** in Blender: model, animate, rig, simulate, paint, composite, sequence, render, and file I/O.
-
-## Quick start
+## Installation
 
 ```bash
 git clone https://github.com/cristoferarango/Blender-Studio-Pro-Mcp.git
@@ -28,20 +26,24 @@ cd Blender-Studio-Pro-Mcp
 pip install -e .
 ```
 
-### 1. Blender addon (download ZIP)
+Then run the MCP server:
 
-Download the ready-to-install addon:
+```bash
+blender-studio-pro-mcp
+```
 
-**[blender_studio_pro_mcp.zip](https://github.com/cristoferarango/Blender-Studio-Pro-Mcp/raw/main/blender_studio_pro_mcp.zip)**
+### Install the ZIP in Blender
 
-1. Blender → **Edit → Preferences → Add-ons → Install…**
+Download: **[blender_studio_pro_mcp.zip](https://github.com/cristoferarango/Blender-Studio-Pro-Mcp/raw/main/blender_studio_pro_mcp.zip)**
+
+1. Open Blender → **Edit → Preferences → Add-ons → Install…**
 2. Select `blender_studio_pro_mcp.zip`
 3. Enable **Blender Studio Pro MCP**
-4. **N** → **Studio Pro** → **Start Server** (port `9877`)
+4. In the 3D Viewport press **N** → **Studio Pro** → **Start Server** (port `9877`)
 
 Or copy the folder `blender_studio_pro_mcp/` into Blender’s `scripts/addons/`.
 
-### 2. Connect any MCP client
+### Connect any MCP client
 
 See **[CLIENTS.md](CLIENTS.md)** for Cursor, Claude, Codex, OpenCode, DeepSeek, Windsurf.
 
@@ -55,6 +57,19 @@ See **[CLIENTS.md](CLIENTS.md)** for Cursor, Claude, Codex, OpenCode, DeepSeek, 
   }
 }
 ```
+
+## What “100%” means
+
+Blender ships **~70+ `bpy.ops` categories** and typically **1500–2500+ operators**.  
+Blender Studio Pro MCP covers them completely:
+
+| Layer | Capability |
+|-------|------------|
+| **Universal bridge** | `get_coverage_report` · `list_operator_categories` · `search_operators` · `get_operator_info` · `poll_operator` · `call_operator` · `call_operators_batch` |
+| **Dedicated tools** | 221 high-level tools (materials, physics, sculpt, VSE, GP, compositor, mesh edit, …) |
+| **Python** | `execute_python` for any `bpy` / `bmesh` |
+
+So agents can do **everything** in Blender: model, animate, rig, simulate, paint, composite, sequence, render, and file I/O.
 
 ## Agent workflow (full Blender)
 
