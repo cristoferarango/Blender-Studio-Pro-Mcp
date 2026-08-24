@@ -23,16 +23,23 @@ So agents can do **everything** in Blender: model, animate, rig, simulate, paint
 ## Quick start
 
 ```bash
-git clone <repo-url> blender-mcp
-cd blender-mcp
+git clone https://github.com/cristoferarango/Blender-Studio-Pro-Mcp.git
+cd Blender-Studio-Pro-Mcp
 pip install -e .
 ```
 
-### 1. Blender addon
+### 1. Blender addon (download ZIP)
 
-1. Install folder `blender_studio_pro_mcp/` (or ZIP it)
-2. Enable **Blender Studio Pro MCP**
-3. **N** → **Studio Pro** → **Start Server** (port `9877`)
+Download the ready-to-install addon:
+
+**[blender_studio_pro_mcp.zip](https://github.com/cristoferarango/Blender-Studio-Pro-Mcp/raw/main/blender_studio_pro_mcp.zip)**
+
+1. Blender → **Edit → Preferences → Add-ons → Install…**
+2. Select `blender_studio_pro_mcp.zip`
+3. Enable **Blender Studio Pro MCP**
+4. **N** → **Studio Pro** → **Start Server** (port `9877`)
+
+Or copy the folder `blender_studio_pro_mcp/` into Blender’s `scripts/addons/`.
 
 ### 2. Connect any MCP client
 
